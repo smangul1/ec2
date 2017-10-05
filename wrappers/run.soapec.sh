@@ -120,9 +120,11 @@ printf "%s --- FINISHED RUNNING %s %s\n" "$now" $toolName >> report.log
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> report.log
 
-cat input_1.fastq.cor.pair_1.fq input_2.fastq.cor.pair_2.fq | gzip > ${toolName}.corrected.fastq.gz
+cat input_1.fastq.cor.pair_1.fq input_2.fastq.cor.pair_2.fq | gzip > ${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
 rm input_1.fastq*
 rm input_2.fastq*
+rm file_with_read_files.lst*
+rm output_kmerfreq.freq.*
 # now go back
 cd $pwd
 

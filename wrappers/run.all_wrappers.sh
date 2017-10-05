@@ -6,10 +6,10 @@
 
 FILE1=reads/input_1.fastq # first read file
 FILE2=reads/input_2.fastq # second read file
-KMER=18             # kmer length
-KMER2=3000000       # estimated number of all kmers
-GLEN=3000           # estimated genome length
-RLEN=100            # maximum read length
+KMER=18                   # kmer length
+KMER2=3000000             # estimated number of all kmers
+GLEN=3000                 # estimated genome length
+RLEN=100                  # maximum read length
 
 
 # create temporary directories

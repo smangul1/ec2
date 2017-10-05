@@ -113,10 +113,15 @@ now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 
-cat $outdir/one_output_file.fastq | gzip > $outdir/${toolName}.corrected.fastq.gz
+cat $outdir/one_output_file.fastq | gzip > $outdir/${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
 
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT DONE\n" "$now" >> $logfile
+
+# remove intermediate files
+rm $outdir/merged_input_file.fastq  
+rm $outdir/one_output_file.fastq
+
 
 # --------------------------------------
 

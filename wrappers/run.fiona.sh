@@ -111,10 +111,15 @@ printf "%s --- FINISHED RUNNING %s %s\n" "$now" $toolName >> $logfile
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
-awk 'NR%2{printf "%s ",$0;next;}1' $outdir/one_output_file.fasta | awk '{lastfield=$NF;$NF="";print "@"substr($0,2,length($0)-1)"\n"lastfield"\n+\n"lastfield}' | gzip > $outdir/${toolName}.corrected.fastq.gz
+awk 'NR%2{printf "%s ",$0;next;}1' $outdir/one_output_file.fasta | awk '{lastfield=$NF;$NF="";print "@"substr($0,2,length($0)-1)"\n"lastfield"\n+\n"lastfield}' | gzip > $outdir/${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
 
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT DONE\n" "$now" >> $logfile
+
+
+# remove intermediate files
+rm $outdir/merged_input_file.fastq
+rm $outdir/one_output_file.*
 
 # --------------------------------------
 

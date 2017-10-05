@@ -114,11 +114,15 @@ printf "%s --- FINISHED RUNNING %s %s\n" "$now" $toolName >> report.log
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> report.log
 
-cat merged_input_file.cor.fq | gzip > ${toolName}.corrected.fastq.gz
+cat merged_input_file.cor.fq | gzip > ${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
 cd $pwd
 
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT DONE\n" "$now" >> $logfile
+
+# remove intermediate files
+rm $outdir/merged_input_file.cor.fq  
+rm $outdir/merged_input_file.fastq
 
 # --------------------------------------
 

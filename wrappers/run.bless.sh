@@ -116,12 +116,22 @@ now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 
-cat $outdir/one_output_file.1.corrected.fastq $outdir/one_output_file.2.corrected.fastq | gzip > $outdir/${toolName}.corrected.fastq.gz
+cat $outdir/one_output_file.1.corrected.fastq $outdir/one_output_file.2.corrected.fastq | gzip > $outdir/${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
 rm $outdir/one_output_file.1.corrected.fastq
 rm $outdir/one_output_file.2.corrected.fastq
 
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT DONE\n" "$now" >> $logfile
+
+
+# remove intermediate files
+rm $outdir/one_output_file.bf.size      
+rm $outdir/one_output_file.histo.qs       
+rm $outdir/one_output_file.kmc.input-list
+rm $outdir/one_output_file.bf.data   
+rm $outdir/one_output_file.histo.k-mer  
+rm $outdir/one_output_file.kmc.*.log
+
 
 # --------------------------------------
 
