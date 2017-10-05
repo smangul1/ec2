@@ -1,0 +1,92 @@
+START
+Wed Oct  4 21:41:39 PDT 2017 --- RUNNING bless
+--------------------------------------------------------------------------
+[[9061,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: login5
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+           BLESS: Bloom-filter based error correction tool
+----------------------------------------------------------------------
+CONTACT : Yun Heo (yunheo1@illinois.edu)
+VERSION: 1.02
+DATE   : Jun. 10, 2015
+----------------------------------------------------------------------
+
+Parsing arguments
+     Number of nodes              : 1
+     Number of threads per node   : 12
+     Max memory usage for KMC     : 4 GB
+     1st read file name           : input_1.fastq
+     2nd read file name           : input_2.fastq
+     k-mer length                 : 15
+     Target false positive prob.  : 0.001
+     Random seed                  : 0
+     k-mer occurence threshold    : Not specified
+     Read extension amount        : 5
+     Load given Bloom filter data : Off
+     No trim reads                : Off
+     Gzip corrected reads         : Off
+     Parsing arguments            : done
+
+Checking input read files
+     Number of pairs           : 608
+     Quality score offset      : 33
+     Quality score threshold   : 14
+     Low quality score threhold: 5
+     Checking input read files : done
+
+Counting the number of k-mers
+     k-mer occurrence threshold   : 8
+     Number of unique solid k-mers: 3126
+     Counting the number of k-mers: done
+
+Determining Bloom filter parameters
+     Bloom filter
+     Number of keys           : 3126
+     Bit-vector size          : 1 MB
+     Number of hash functions : 6
+     Determining Bloom filter parameters: done
+
+Programming k-mers to the Bloom filter
+     Programming k-mers to the Bloom filter: done
+
+Correcting errors in reads
+     Number of corrected errors: 970
+     Number of trimmed bases   : 20290
+     Number of corrected reads : 912
+     Correcting errors in reads: done
+
+Merging output files
+     Merging output files: done
+
+Running Time
+     Checking reads
+          Start: Wed Oct  4 21:41:40 2017
+          End  : Wed Oct  4 21:41:40 2017
+     Counting the number of unique solid k-mers
+          Start: Wed Oct  4 21:41:40 2017
+          End  : Wed Oct  4 21:41:43 2017
+     Programming k-mers into the Bloom filter
+          Start: Wed Oct  4 21:41:43 2017
+          End  : Wed Oct  4 21:41:43 2017
+     Correcting errors in reads
+          Start: Wed Oct  4 21:41:43 2017
+          End  : Wed Oct  4 21:41:43 2017
+     Merging output files
+          Start: Wed Oct  4 21:41:43 2017
+          End  : Wed Oct  4 21:41:43 2017
+
+BLESS is successfully completed
+
+Wed Oct  4 21:41:43 PDT 2017 --- TOTAL RUNTIME: 0:00:00:4.2477
+Wed Oct  4 21:41:43 PDT 2017 --- FINISHED RUNNING bless 
+Wed Oct  4 21:41:43 PDT 2017 --- TRANSFORMING OUTPUT
+Wed Oct  4 21:41:43 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

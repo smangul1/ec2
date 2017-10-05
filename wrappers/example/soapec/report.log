@@ -1,0 +1,69 @@
+START
+Wed Oct  4 21:55:04 PDT 2017 --- RUNNING soapec
+Program start..
+Program:	KmerFreq_HA
+Version:	v2.03
+Author:		BGI-ShenZhen
+CompileDate:	Apr 22 2017 time: 22:18:24
+Current time:	Wed Oct  4 21:55:04 2017
+Command line:	/u/home/d/douglasy/SOAPec_src_v2.03/src/Kmerfreq_HA/KmerFreq_HA -k 15 -p output_kmerfreq -l file_with_read_files.lst -L 1000
+Start to construct kmer-freq table...
+1 threads created!
+File: input_1.fastq
+the operating file is: input_1.fastq
+File: input_2.fastq
+the operating file is: input_2.fastq
+Load All files done!
+Waiting for threads to exit...
+All threads finished!
+Used time: 0.0166667 minutes.
+Finish kmer-freq table construction!
+Used time: 0.0166667mins.
+
+Start to analysis the result...
+Please check the peek position carefully
+
+All done! Used time: 0.0166667mins.
+Thank you!
+
+Program start..
+Program:	Corrector_HA
+Version:	v2.03
+Author:		BGI-ShenZhen
+CompileDate:	Apr 22 2017 time: 22:18:33
+Current time:	Wed Oct  4 21:55:06 2017
+Command line:	/u/home/d/douglasy/SOAPec_src_v2.03/src/Corrector_HA/Corrector_HA -o 3 -k 15 output_kmerfreq.freq.gz file_with_read_files.lst
+
+Start to caculate high-freq kmer species number...
+Finish caculation. The number of kmer species which frequency higher than 3 is: 4969
+Run time: 0s.
+
+Start to load the kmer frequency table...
+Finish loading the kmer frequency table!
+KmerSize 15
+Kmer_species_num 19371
+Low_freq_kmer_ratio 0.743483
+Run time: 0s.
+1 threads creation done!
+
+Finished to parse file input_1.fastq
+
+1 threads creation done!
+
+Finished to parse file input_2.fastq
+
+Parsed all the reads files completed
+Run time: 0s.
+Start to convert input_1.fastq.cor & input_2.fastq.cor
+Finished to convert input_1.fastq.cor & input_2.fastq.cor
+Convert all the paired reads files completed
+Run time: 0s.
+Begin output the QC file...
+Finished output QC file!
+All done!
+Run time: 0s.
+Wed Oct  4 21:55:06 PDT 2017 --- TOTAL RUNTIME: 0:00:00:2.9709
+Wed Oct  4 21:55:07 PDT 2017 --- FINISHED RUNNING soapec 
+Wed Oct  4 21:55:07 PDT 2017 --- TRANSFORMING OUTPUT
+Wed Oct  4 21:55:07 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE
