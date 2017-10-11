@@ -1,11 +1,11 @@
 START
-Thu Oct  5 15:45:40 PDT 2017 --- RUNNING bless
+Tue Oct 10 21:57:44 PDT 2017 --- RUNNING bless
 --------------------------------------------------------------------------
-[[32730,1],0]: A high-performance Open MPI point-to-point messaging module
+[[43183,1],0]: A high-performance Open MPI point-to-point messaging module
 was unable to find any relevant network interfaces:
 
 Module: OpenFabrics (openib)
-  Host: login4
+  Host: login1
 
 Another transport will be used instead, although this may result in
 lower performance.
@@ -23,9 +23,9 @@ Parsing arguments
      Number of nodes              : 1
      Number of threads per node   : 12
      Max memory usage for KMC     : 4 GB
-     1st read file name           : input_1.fastq
-     2nd read file name           : input_2.fastq
-     k-mer length                 : 15
+     1st read file name           : sim_rl_75_cov_1_1.fastq
+     2nd read file name           : sim_rl_75_cov_1_1.fastq
+     k-mer length                 : 18
      Target false positive prob.  : 0.001
      Random seed                  : 0
      k-mer occurence threshold    : Not specified
@@ -36,20 +36,20 @@ Parsing arguments
      Parsing arguments            : done
 
 Checking input read files
-     Number of pairs           : 608
+     Number of pairs           : 3229
      Quality score offset      : 33
-     Quality score threshold   : 14
-     Low quality score threhold: 5
+     Quality score threshold   : 23
+     Low quality score threhold: 10
      Checking input read files : done
 
 Counting the number of k-mers
-     k-mer occurrence threshold   : 8
-     Number of unique solid k-mers: 3126
+     k-mer occurrence threshold   : 3
+     Number of unique solid k-mers: 9857
      Counting the number of k-mers: done
 
 Determining Bloom filter parameters
      Bloom filter
-     Number of keys           : 3126
+     Number of keys           : 9857
      Bit-vector size          : 1 MB
      Number of hash functions : 6
      Determining Bloom filter parameters: done
@@ -58,9 +58,9 @@ Programming k-mers to the Bloom filter
      Programming k-mers to the Bloom filter: done
 
 Correcting errors in reads
-     Number of corrected errors: 970
-     Number of trimmed bases   : 20290
-     Number of corrected reads : 912
+     Number of corrected errors: 1316
+     Number of trimmed bases   : 7212
+     Number of corrected reads : 1098
      Correcting errors in reads: done
 
 Merging output files
@@ -68,25 +68,25 @@ Merging output files
 
 Running Time
      Checking reads
-          Start: Thu Oct  5 15:45:40 2017
-          End  : Thu Oct  5 15:45:40 2017
+          Start: Tue Oct 10 21:57:45 2017
+          End  : Tue Oct 10 21:57:45 2017
      Counting the number of unique solid k-mers
-          Start: Thu Oct  5 15:45:40 2017
-          End  : Thu Oct  5 15:45:42 2017
+          Start: Tue Oct 10 21:57:45 2017
+          End  : Tue Oct 10 21:57:47 2017
      Programming k-mers into the Bloom filter
-          Start: Thu Oct  5 15:45:42 2017
-          End  : Thu Oct  5 15:45:42 2017
+          Start: Tue Oct 10 21:57:47 2017
+          End  : Tue Oct 10 21:57:48 2017
      Correcting errors in reads
-          Start: Thu Oct  5 15:45:42 2017
-          End  : Thu Oct  5 15:45:42 2017
+          Start: Tue Oct 10 21:57:48 2017
+          End  : Tue Oct 10 21:57:48 2017
      Merging output files
-          Start: Thu Oct  5 15:45:42 2017
-          End  : Thu Oct  5 15:45:42 2017
+          Start: Tue Oct 10 21:57:48 2017
+          End  : Tue Oct 10 21:57:48 2017
 
 BLESS is successfully completed
 
-Thu Oct  5 15:45:42 PDT 2017 --- TOTAL RUNTIME: 0:00:00:2.2490
-Thu Oct  5 15:45:42 PDT 2017 --- FINISHED RUNNING bless 
-Thu Oct  5 15:45:42 PDT 2017 --- TRANSFORMING OUTPUT
-Thu Oct  5 15:45:42 PDT 2017 --- TRANSFORMING OUTPUT DONE
+Tue Oct 10 21:57:48 PDT 2017 --- TOTAL RUNTIME: 0:00:00:3.6289
+Tue Oct 10 21:57:48 PDT 2017 --- FINISHED RUNNING bless 
+Tue Oct 10 21:57:48 PDT 2017 --- TRANSFORMING OUTPUT
+Tue Oct 10 21:57:48 PDT 2017 --- TRANSFORMING OUTPUT DONE
 DONE
