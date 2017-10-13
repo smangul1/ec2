@@ -1,0 +1,1 @@
+../paired_end/run.sga.sh
