@@ -20,6 +20,10 @@ We simulate the TCR transcrips as described in here Mangul, Serghei, et al. "Pro
 
 In total we simulated ? transcripts. We transcripts are available here
 
+```
+ec2/evaluation_methodology/data
+```
+
 
 We simulate reads from the IGH and TCRA transcripts (reffered as immune transcripts) using this command 
 
@@ -37,7 +41,8 @@ Simulator simulates reads with ? error rate. To obtain the error-free version of
 To obtain the error-free version of the read we correct all mistahes with the reference using this script
 
 ```
-???
+Igor, please upload all the scripts here
+ec2/evaluation_methodology/code/
 ```
 
 After we obtain golden standard reads, we use the following scripts to compute the statistical measures 
@@ -62,11 +67,43 @@ We simulate 2 different datasets at different error rates.
 - T1 error rate ?
 - T3  error rate
 
-The simulateror besides errros introduse SNPs. To obtain the error-free version of the reads (golden standard data), we map reads onto the refference genome using this command
+The simulateror besides errros introduse SNPs. To obtain the error-free version of the reads (golden standard data), we map reads onto the reference genome using this command
 
 ```
 ???
 ```
+
+To obtain the error-free version of the read we correct all mistahes with the reference, ignoring positions with SNPs using this script
+
+```
+```
+
+The list of SNPs is available here
+
+```
+ec2/evaluation_methodology/data
+```
+
+# RepSeq_real
+
+We obtain TCR-Seq data from here
+
+```
+Igor, provide the path and the paper
+ ```
+
+
+Given a file with UMIs we run this scripts to group the UMIs and correct the errors. Those reads are considered as golden standard reads. 
+
+
+The original reads with UMIs are here
+
+```
+Igor, please provide the path oh hoffman2
+```
+
+The reads UMIs removed were provided for EC tools
+
 
 
 
