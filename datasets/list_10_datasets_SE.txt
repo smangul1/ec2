@@ -1,0 +1,11 @@
+
+/u/home/s/serghei/project/EC_survey/RepSeq_real/RepSeq_real_SRR1543964.fastq
+/u/home/s/serghei/project/EC_survey/RepSeq_real/RepSeq_real_SRR1543965.fastq
+/u/home/s/serghei/project/EC_survey/RepSeq_real/RepSeq_real_SRR1543966.fastq
+/u/home/s/serghei/project/EC_survey/RepSeq_real/RepSeq_real_SRR1543967.fastq
+/u/home/s/serghei/project/EC_survey/RepSeq_real/RepSeq_real_SRR1543968.fastq
+/u/home/s/serghei/project/EC_survey/RepSeq_real/RepSeq_real_SRR1543969.fastq
+/u/home/s/serghei/project/EC_survey/RepSeq_real/RepSeq_real_SRR1543970.fastq
+/u/home/s/serghei/project/EC_survey/RepSeq_real/RepSeq_real_SRR1543971.fastq
+/u/home/s/serghei/project/EC_survey/RepSeq_real/RepSeq_real_SRR1543972.fastq
+/u/home/s/serghei/project/EC_survey/RepSeq_real/RepSeq_real_SRR1543973.fastq
