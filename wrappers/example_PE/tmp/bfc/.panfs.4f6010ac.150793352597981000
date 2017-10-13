@@ -1,0 +1,20 @@
+START
+Fri Oct 13 14:23:59 PDT 2017 --- RUNNING bfc
+[M::main] set k to 18
+[M::bfc_count_cb] read 1216 sequences
+[M::bfc_count_cb] read 0 sequences
+[M::bfc_count_cb @2.9*99.8%] processed 1216 sequences; # distinct k-mers: 7924
+[M::bfc_count_cb] read 0 sequences
+[M::bfc_correct @2.9*99.8%] Starting...
+[M::bfc_ec_cb] read 1216 sequences
+[M::bfc_ec_cb] read 0 sequences
+[M::bfc_ec_cb @3.0*99.9%] processed 1216 sequences
+[M::bfc_ec_cb] read 0 sequences
+[M::main] Version: r181
+[M::main] CMD: /u/home/d/douglasy/bfc/bfc -k 18 /u/home/s/serghei/collab/code/ec2/wrappers/example_PE/tmp/bfc/merged_input_file.fastq
+[M::main] Real time: 3.048 sec; CPU: 3.032 sec
+Fri Oct 13 14:24:02 PDT 2017 --- TOTAL RUNTIME: 0:00:00:3.1953
+Fri Oct 13 14:24:02 PDT 2017 --- FINISHED RUNNING bfc 
+Fri Oct 13 14:24:02 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 14:24:02 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE
