@@ -113,7 +113,7 @@ printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 basename1=$(basename $input1)
 basename2=$(basename $input2)
 
-cat $outdir/${basename1}.corrected $outdir/${basename2}.corrected | gzip > $outdir/${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
+cat $outdir/${basename1}.corrected $outdir/${basename2}.corrected | gzip > $outdir/${toolName}_$(basename ${input1%.*})_${kmer}.corrected.fastq.gz
 rm $outdir/${basename1}.corrected
 rm $outdir/${basename2}.corrected
 

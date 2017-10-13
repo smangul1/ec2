@@ -26,7 +26,7 @@ toolPath="/u/home/d/douglasy/SOAPec_src_v2.03/src" # this is a directory by the 
 
 
 
-if [ $# -lt 5 ]
+if [ $# -lt 4 ]
 then
 echo "********************************************************************"
 echo "Script was written for project : Best practices for conducting benchmarking in the most comprehensive and reproducible way"
@@ -37,7 +37,6 @@ echo "1 <input1> - _1.fastq"
 echo "2 <input2> - _2.fastq"
 echo "3 <outdir> - dir to save the output"
 echo "4 <kmer>   - kmer length"
-echo "5 <rlen>   - maximum read length"
 echo "--------------------------------------"
 exit 1
 fi
@@ -51,7 +50,8 @@ outdir=$3
 
 # extra part (tool specific)
 kmer=$4
-rlen=$5
+# We assume the same read length
+rlen=$(head -n 2 $input1 | tail -n 1 | awk '{print length($1)}')
 
 
 # STEP 0 - create output directory if it does not exist
@@ -61,7 +61,7 @@ pwd=$PWD
 cd $outdir
 outdir=$PWD
 cd $pwd
-logfile=$outdir/report.log
+logfile=$outdir/report_${toolName}_${kmer}.log
 
 # -----------------------------------------------------
 
@@ -80,6 +80,7 @@ echo "$(basename $input2)" >> $outdir/file_with_read_files.lst
 
 
 
+
 # STEP 2 - run the tool (ATTENTION: TOOL SPECIFIC PART!)
 
 now="$(date)"
@@ -90,6 +91,11 @@ res1=$(date +%s.%N)
 
 pwd="$PWD"
 cd $outdir
+
+
+
+
+
 $toolPath/Kmerfreq_HA/KmerFreq_HA -k $kmer -p output_kmerfreq -l file_with_read_files.lst -L $rlen >> $logfile 2>&1
 $toolPath/Corrector_HA/Corrector_HA -o 3 -k $kmer output_kmerfreq.freq.gz file_with_read_files.lst >> $logfile 2>&1
 
@@ -120,7 +126,7 @@ printf "%s --- FINISHED RUNNING %s %s\n" "$now" $toolName >> report.log
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> report.log
 
-cat input_1.fastq.cor.pair_1.fq input_2.fastq.cor.pair_2.fq | gzip > ${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
+cat input_1.fastq.cor.pair_1.fq input_2.fastq.cor.pair_2.fq | gzip > ${toolName}_$(basename ${input1%.*})_${kmer}.corrected.fastq.gz
 rm input_1.fastq*
 rm input_2.fastq*
 rm file_with_read_files.lst*

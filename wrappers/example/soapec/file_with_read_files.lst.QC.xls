@@ -1,9 +1,0 @@
-
-===========*.cor.stat:===========
-FileName	RawReads	RawBases	ResultReads	ResultBases	TrimmedReads	TrimmedBases	DeletedReads	BasesFilterRatio	EstimatedErrorRatio
-input_1.fastq	608	60800	551	51171	174	3929	57	0.158372	0.00287272
-input_2.fastq	608	60800	534	48675	224	4725	74	0.199424	0.00774525
-
-===========*.pair.single.stat:===========
-LaneName	PairReads	PairBases	SingleReads	SingleBases
-input	972	89887	113	9959

@@ -110,7 +110,7 @@ now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 
-cat $outdir/one_output_file.fastq | gzip > $outdir/${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
+cat $outdir/one_output_file.fastq | gzip > $outdir/${toolName}_$(basename ${input1%.*})_${kmer}.corrected.fastq.gz
 
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT DONE\n" "$now" >> $logfile

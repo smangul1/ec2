@@ -37,7 +37,6 @@ echo "1 <input1> - _1.fastq"
 echo "2 <input2> - _2.fastq"
 echo "3 <outdir> - dir to save the output"
 echo "4 <kmer>   - kmer length"
-#echo "5 <glen>   - approximate genome size"
 echo "--------------------------------------"
 exit 1
 fi

@@ -59,7 +59,7 @@ pwd=$PWD
 cd $outdir
 outdir=$PWD
 cd $pwd
-logfile=$outdir/report.log
+logfile=$outdir/report_${toolName}_${kmer}.log
 
 # -----------------------------------------------------
 
