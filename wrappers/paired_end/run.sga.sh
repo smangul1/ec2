@@ -70,7 +70,7 @@ cat $input1 $input2 > $outdir_abs/one_input_file.fastq
 
 logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${kmer}.log
 
-echo "START" >> $logfile
+echo "START" > $logfile
 
 # -----------------------------------
 
@@ -87,7 +87,7 @@ res1=$(date +%s.%N)
 
 pwd=$PWD
 cd $outdir_abs
-$toolPath preprocess one_input_file.fastq -o one_output_file.preprocessed.fastq >> $logfile 2>&1
+echo "$toolPath preprocess one_input_file.fastq -o one_output_file.preprocessed.fastq >> $logfile 2>&1"
 $toolPath index -a ropebwt one_output_file.preprocessed.fastq >> $logfile 2>&1
 $toolPath correct -k $kmer -o one_output_file.out.fastq one_output_file.preprocessed.fastq >> $logfile 2>&1
 

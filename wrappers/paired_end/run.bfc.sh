@@ -26,7 +26,7 @@ toolPath="/u/home/d/douglasy/bfc/bfc"
 
 
 
-if [ $# -lt 5 ]
+if [ $# -lt 4 ]
 then
 echo "********************************************************************"
 echo "Script was written for project : Best practices for conducting benchmarking in the most comprehensive and reproducible way"
@@ -37,7 +37,6 @@ echo "1 <input1>  - _1.fastq"
 echo "2 <input2>  - _2.fastq"
 echo "3 <outdir>  - dir to save the output"
 echo "4 <kmer>    - kmer length"
-echo "5 <glength> - genome length"
 echo "--------------------------------------"
 exit 1
 fi
@@ -51,7 +50,6 @@ outdir=$3
 
 # extra part (tool specific)
 kmer=$4
-glength=$5
 
 
 # STEP 0 - create output directory if it does not exist

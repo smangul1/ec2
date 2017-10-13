@@ -26,7 +26,7 @@ toolPath="/u/home/b/blhill/local/bin/reckoner"
 
 
 
-if [ $# -lt 4 ]
+if [ $# -lt 3 ]
 then
 echo "********************************************************************"
 echo "Script was written for project : Best practices for conducting benchmarking in the most comprehensive and reproducible way"
@@ -36,7 +36,6 @@ echo ""
 echo "1 <input>  - .fastq"
 echo "2 <outdir> - dir to save the output"
 echo "3 <kmer>   - kmer length"
-echo "4 <glen>   - approximate genome size"
 echo "--------------------------------------"
 exit 1
 fi
@@ -49,14 +48,12 @@ outdir=$2
 
 # extra part (tool specific)
 kmer=$3
-glen=$4
 
 
 # STEP 0 - create output directory if it does not exist
 
 mkdir -p $outdir
-logfile=$outdir/report.log
-
+logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${kmer}.log
 # -----------------------------------------------------
 
 echo "START" >> $logfile
@@ -81,7 +78,10 @@ printf "%s --- RUNNING %s\n" "$now" $toolName >> $logfile
 
 # run the command
 res1=$(date +%s.%N)
-$toolPath -read $input -kmerlength $kmer -genome $glen -prefix $outdir_abs -threads 1 >> $logfile 2>&1
+
+
+
+$toolPath -read $input -kmerlength $kmer -prefix $outdir_abs -threads 1 >> $logfile 2>&1
 res2=$(date +%s.%N)
 dt=$(echo "$res2 - $res1" | bc)
 dd=$(echo "$dt/86400" | bc)
@@ -110,7 +110,7 @@ now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 
-cat $outdir_abs/$(basename ${input%.*}).corrected.fastq | gzip > $outdir/${toolName}_$(basename ${input%.*}).corrected.fastq.gz
+cat $outdir_abs/$(basename ${input%.*}).corrected.fastq | gzip > $outdir/${toolName}_$(basename ${input%.*})_${kmer}.corrected.fastq.gz
 rm $outdir_abs/$(basename ${input%.*}).corrected.fastq
 
 rm $outdir_abs/$(basename ${input%.*}).log

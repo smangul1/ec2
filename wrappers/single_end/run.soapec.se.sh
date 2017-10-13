@@ -26,7 +26,7 @@ toolPath="/u/home/d/douglasy/SOAPec_src_v2.03/src" # this is a directory by the 
 
 
 
-if [ $# -lt 4 ]
+if [ $# -lt 3 ]
 then
 echo "********************************************************************"
 echo "Script was written for project : Best practices for conducting benchmarking in the most comprehensive and reproducible way"
@@ -36,7 +36,6 @@ echo ""
 echo "1 <input>  - .fastq"
 echo "2 <outdir> - dir to save the output"
 echo "3 <kmer>   - kmer length"
-echo "4 <rlen>   - maximum read length"
 echo "--------------------------------------"
 exit 1
 fi
@@ -49,8 +48,8 @@ outdir=$2
 
 # extra part (tool specific)
 kmer=$3
-rlen=$4
-
+# We assume the same read length
+rlen=$(head -n 2 $input1 | tail -n 1 | awk '{print length($1)}')
 
 # STEP 0 - create output directory if it does not exist
 
@@ -59,8 +58,7 @@ pwd=$PWD
 cd $outdir
 outdir=$PWD
 cd $pwd
-logfile=$outdir/report.log
-
+logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${kmer}.log
 # -----------------------------------------------------
 
 echo "START" >> $logfile
@@ -116,7 +114,7 @@ printf "%s --- FINISHED RUNNING %s %s\n" "$now" $toolName >> report.log
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> report.log
 
-cat $(basename ${input}).cor.fq | gzip > ${toolName}_$(basename ${input%.*}).corrected.fastq.gz
+cat $(basename ${input}).cor.fq | gzip > ${toolName}_$(basename ${input%.*})_${kmer}.corrected.fastq.gz
 rm $(basename ${input})*
 rm file_with_read_files.lst*
 rm output_kmerfreq.freq.*

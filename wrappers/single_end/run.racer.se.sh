@@ -58,8 +58,7 @@ pwd=$PWD
 cd $outdir
 outdir=$PWD
 cd $pwd
-logfile=$outdir/report.log
-
+logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${glen}.log
 # -----------------------------------------------------
 
 echo "START" >> $logfile
@@ -110,7 +109,7 @@ now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 
-cat $outdir/one_output_file.fastq | gzip > $outdir/${toolName}_$(basename ${input%.*}).corrected.fastq.gz
+cat $outdir/one_output_file.fastq | gzip > $outdir/${toolName}_$(basename ${input%.*})_${glen}.corrected.fastq.gz
 
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT DONE\n" "$now" >> $logfile

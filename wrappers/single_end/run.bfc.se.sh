@@ -26,7 +26,7 @@ toolPath="/u/home/d/douglasy/bfc/bfc"
 
 
 
-if [ $# -lt 4 ]
+if [ $# -lt 3 ]
 then
 echo "********************************************************************"
 echo "Script was written for project : Best practices for conducting benchmarking in the most comprehensive and reproducible way"
@@ -36,7 +36,6 @@ echo ""
 echo "1 <input>   - .fastq"
 echo "2 <outdir>  - dir to save the output"
 echo "3 <kmer>    - kmer length"
-echo "4 <glength> - genome length"
 echo "--------------------------------------"
 exit 1
 fi
@@ -82,7 +81,7 @@ printf "%s --- RUNNING %s\n" "$now" $toolName >> $logfile
 
 # run the command
 res1=$(date +%s.%N)
-$toolPath -s $glength -k $kmer $input > $outdir/one_output_file.fastq 2>>$logfile
+$toolPath -k $kmer $input > $outdir/one_output_file.fastq 2>>$logfile
 res2=$(date +%s.%N)
 dt=$(echo "$res2 - $res1" | bc)
 dd=$(echo "$dt/86400" | bc)
@@ -111,7 +110,7 @@ now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 
-cat $outdir/one_output_file.fastq | gzip > $outdir/${toolName}_$(basename ${input%.*}).corrected.fastq.gz
+cat $outdir/one_output_file.fastq | gzip > $outdir/${toolName}_$(basename ${input%.*})_${kmer}.corrected.fastq.gz
 
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT DONE\n" "$now" >> $logfile

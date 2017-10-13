@@ -58,8 +58,7 @@ pwd=$PWD
 cd $outdir
 outdir=$PWD
 cd $pwd
-logfile=$outdir/report.log
-
+logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${glen}.log
 # -----------------------------------------------------
 
 echo "START" >> $logfile
@@ -109,7 +108,7 @@ printf "%s --- FINISHED RUNNING %s %s\n" "$now" $toolName >> $logfile
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
-awk 'NR%2{printf "%s ",$0;next;}1' $outdir/one_output_file.fasta | awk '{lastfield=$NF;$NF="";print "@"substr($0,2,length($0)-1)"\n"lastfield"\n+\n"lastfield}' | gzip > $outdir/${toolName}_$(basename ${input%.*}).corrected.fastq.gz
+awk 'NR%2{printf "%s ",$0;next;}1' $outdir/one_output_file.fasta | awk '{lastfield=$NF;$NF="";print "@"substr($0,2,length($0)-1)"\n"lastfield"\n+\n"lastfield}' | gzip > $outdir/${toolName}_$(basename ${input%.*})_${glen}.corrected.fastq.gz
 
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT DONE\n" "$now" >> $logfile

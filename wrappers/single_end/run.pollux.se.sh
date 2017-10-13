@@ -58,8 +58,7 @@ pwd=$PWD
 cd $outdir
 outdir=$PWD
 cd $pwd
-logfile=$outdir/report.log
-
+logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${kmer}.log
 # -----------------------------------------------------
 
 echo "START" >> $logfile
@@ -110,7 +109,7 @@ printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 basename1=$(basename $input)
 
-cat $outdir/${basename1}.corrected | gzip > $outdir/${toolName}_$(basename ${input%.*}).corrected.fastq.gz
+cat $outdir/${basename1}.corrected | gzip > $outdir/${toolName}_$(basename ${input%.*})_${kmer}.corrected.fastq.gz
 rm $outdir/${basename1}.corrected
 
 now="$(date)"
