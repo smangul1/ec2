@@ -1,0 +1,20 @@
+START
+Fri Oct 13 12:07:12 PDT 2017 --- RUNNING lighter
+[2017-10-13 12:07:12] =============Start====================
+[2017-10-13 12:07:12] Scanning the input files to infer alpha(sampling rate)
+[2017-10-13 12:07:12] Average coverage is 0.000 and alpha is 14331.373
+[2017-10-13 12:07:13] Bad quality threshold is "("
+[2017-10-13 12:07:13] Finish sampling kmers
+[2017-10-13 12:07:13] Bloom filter A's false positive rate: 0.000000
+[2017-10-13 12:07:13] Finish storing trusted kmers
+[2017-10-13 12:07:13] Finish error correction
+Processed 1216 reads:
+	798 are error-free
+	Corrected 775 bases(1.854067 corrections for reads with errors)
+	Trimmed 0 reads with average trimmed bases 0.000000
+	Discard 0 reads
+Fri Oct 13 12:07:13 PDT 2017 --- TOTAL RUNTIME: 0:00:00:0.3741
+Fri Oct 13 12:07:13 PDT 2017 --- FINISHED RUNNING lighter 
+Fri Oct 13 12:07:13 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 12:07:13 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

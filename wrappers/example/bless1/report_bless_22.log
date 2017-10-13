@@ -1,0 +1,45 @@
+START
+Fri Oct 13 11:45:52 PDT 2017 --- RUNNING bless
+--------------------------------------------------------------------------
+[[62484,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: login3
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+           BLESS: Bloom-filter based error correction tool
+----------------------------------------------------------------------
+CONTACT : Yun Heo (yunheo1@illinois.edu)
+VERSION: 1.02
+DATE   : Jun. 10, 2015
+----------------------------------------------------------------------
+
+Parsing arguments
+     Number of nodes              : 1
+     Number of threads per node   : 12
+     Max memory usage for KMC     : 4 GB
+     1st read file name           : input_1.fastq
+     2nd read file name           : input_2.fastq
+     k-mer length                 : 22
+     Target false positive prob.  : 0.001
+     Random seed                  : 0
+     k-mer occurence threshold    : Not specified
+     Read extension amount        : 5
+     Load given Bloom filter data : Off
+     No trim reads                : Off
+     Gzip corrected reads         : Off
+     Parsing arguments            : done
+
+Checking input read files
+     Number of pairs           : 608
+     Quality score offset      : 33
+     Quality score threshold   : 14
+     Low quality score threhold: 5
+     Checking input read files : done
+
+Counting the number of k-mers

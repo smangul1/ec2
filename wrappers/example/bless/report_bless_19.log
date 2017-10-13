@@ -1,0 +1,233 @@
+START
+Fri Oct 13 11:39:54 PDT 2017 --- RUNNING bless
+--------------------------------------------------------------------------
+[[49798,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: login3
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+           BLESS: Bloom-filter based error correction tool
+----------------------------------------------------------------------
+CONTACT : Yun Heo (yunheo1@illinois.edu)
+VERSION: 1.02
+DATE   : Jun. 10, 2015
+----------------------------------------------------------------------
+
+Parsing arguments
+     Number of nodes              : 1
+     Number of threads per node   : 12
+     Max memory usage for KMC     : 4 GB
+     1st read file name           : input_1.fastq
+     2nd read file name           : input_2.fastq
+     k-mer length                 : 19
+     Target false positive prob.  : 0.001
+     Random seed                  : 0
+     k-mer occurence threshold    : Not specified
+     Read extension amount        : 5
+     Load given Bloom filter data : Off
+     No trim reads                : Off
+     Gzip corrected reads         : Off
+     Parsing arguments            : done
+
+Checking input read files
+     Number of pairs           : 608
+     Quality score offset      : 33
+     Quality score threshold   : 14
+     Low quality score threhold: 5
+     Checking input read files : done
+
+Counting the number of k-mers
+START
+Fri Oct 13 11:43:26 PDT 2017 --- RUNNING bless
+--------------------------------------------------------------------------
+[[51368,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: login3
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+           BLESS: Bloom-filter based error correction tool
+----------------------------------------------------------------------
+CONTACT : Yun Heo (yunheo1@illinois.edu)
+VERSION: 1.02
+DATE   : Jun. 10, 2015
+----------------------------------------------------------------------
+
+Parsing arguments
+     Number of nodes              : 1
+     Number of threads per node   : 12
+     Max memory usage for KMC     : 4 GB
+     1st read file name           : input_1.fastq
+     2nd read file name           : input_2.fastq
+     k-mer length                 : 19
+     Target false positive prob.  : 0.001
+     Random seed                  : 0
+     k-mer occurence threshold    : Not specified
+     Read extension amount        : 5
+     Load given Bloom filter data : Off
+     No trim reads                : Off
+     Gzip corrected reads         : Off
+     Parsing arguments            : done
+
+Checking input read files
+     Number of pairs           : 608
+     Quality score offset      : 33
+     Quality score threshold   : 14
+     Low quality score threhold: 5
+     Checking input read files : done
+
+Counting the number of k-mers
+START
+Fri Oct 13 11:44:32 PDT 2017 --- RUNNING bless
+--------------------------------------------------------------------------
+[[51537,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: login3
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+           BLESS: Bloom-filter based error correction tool
+----------------------------------------------------------------------
+CONTACT : Yun Heo (yunheo1@illinois.edu)
+VERSION: 1.02
+DATE   : Jun. 10, 2015
+----------------------------------------------------------------------
+
+Parsing arguments
+     Number of nodes              : 1
+     Number of threads per node   : 12
+     Max memory usage for KMC     : 4 GB
+     1st read file name           : input_1.fastq
+     2nd read file name           : input_2.fastq
+     k-mer length                 : 19
+     Target false positive prob.  : 0.001
+     Random seed                  : 0
+     k-mer occurence threshold    : Not specified
+     Read extension amount        : 5
+     Load given Bloom filter data : Off
+     No trim reads                : Off
+     Gzip corrected reads         : Off
+     Parsing arguments            : done
+
+Checking input read files
+     Number of pairs           : 608
+     Quality score offset      : 33
+     Quality score threshold   : 14
+     Low quality score threhold: 5
+     Checking input read files : done
+
+Counting the number of k-mers
+terminate called after throwing an instance of 'boost::filesystem::filesystem_error'
+  what():  boost::filesystem::remove: Device or resource busy: "/u/home/s/serghei/project/code/ec2/wrappers/example/bless/one_output_file.00000/.panfs.506010ac.1507920213327335000"
+[login3:07566] *** Process received signal ***
+[login3:07566] Signal: Aborted (6)
+[login3:07566] Signal code:  (-6)
+[login3:07566] [ 0] /lib64/libpthread.so.0(+0xf7e0)[0x7f3cb35747e0]
+[login3:07566] [ 1] /lib64/libc.so.6(gsignal+0x35)[0x7f3cb3203495]
+[login3:07566] [ 2] /lib64/libc.so.6(abort+0x175)[0x7f3cb3204c75]
+[login3:07566] [ 3] /u/local/compilers/gcc/4.9.3/lib64/libstdc++.so.6(_ZN9__gnu_cxx27__verbose_terminate_handlerEv+0x15d)[0x7f3cb3e9207d]
+[login3:07566] [ 4] /u/local/compilers/gcc/4.9.3/lib64/libstdc++.so.6(+0x5e0e6)[0x7f3cb3e900e6]
+[login3:07566] [ 5] /u/local/compilers/gcc/4.9.3/lib64/libstdc++.so.6(+0x5e131)[0x7f3cb3e90131]
+[login3:07566] [ 6] /u/local/compilers/gcc/4.9.3/lib64/libstdc++.so.6(+0x5e348)[0x7f3cb3e90348]
+[login3:07566] [ 7] /u/home/s/serghei/code/import/bless/bless[0x467c7c]
+[login3:07566] [ 8] /u/home/s/serghei/code/import/bless/bless[0x468863]
+[login3:07566] [ 9] /u/home/s/serghei/code/import/bless/bless[0x468c9a]
+[login3:07566] [10] /u/home/s/serghei/code/import/bless/bless[0x4692c5]
+[login3:07566] [11] /u/home/s/serghei/code/import/bless/bless[0x459b4e]
+[login3:07566] [12] /u/home/s/serghei/code/import/bless/bless[0x45c034]
+[login3:07566] [13] /u/home/s/serghei/code/import/bless/bless[0x45e87f]
+[login3:07566] [14] /lib64/libc.so.6(__libc_start_main+0xfd)[0x7f3cb31efd1d]
+[login3:07566] [15] /u/home/s/serghei/code/import/bless/bless[0x40e1fd]
+[login3:07566] *** End of error message ***
+Fri Oct 13 11:44:55 PDT 2017 --- TOTAL RUNTIME: 0:00:00:23.3182
+Fri Oct 13 11:44:55 PDT 2017 --- FINISHED RUNNING bless 
+Fri Oct 13 11:44:55 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 11:44:55 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONESTART
+Fri Oct 13 11:45:18 PDT 2017 --- RUNNING bless
+--------------------------------------------------------------------------
+[[51755,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: login3
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+           BLESS: Bloom-filter based error correction tool
+----------------------------------------------------------------------
+CONTACT : Yun Heo (yunheo1@illinois.edu)
+VERSION: 1.02
+DATE   : Jun. 10, 2015
+----------------------------------------------------------------------
+
+Parsing arguments
+     Number of nodes              : 1
+     Number of threads per node   : 12
+     Max memory usage for KMC     : 4 GB
+     1st read file name           : input_1.fastq
+     2nd read file name           : input_2.fastq
+     k-mer length                 : 19
+     Target false positive prob.  : 0.001
+     Random seed                  : 0
+     k-mer occurence threshold    : Not specified
+     Read extension amount        : 5
+     Load given Bloom filter data : Off
+     No trim reads                : Off
+     Gzip corrected reads         : Off
+     Parsing arguments            : done
+
+Checking input read files
+     Number of pairs           : 608
+     Quality score offset      : 33
+     Quality score threshold   : 14
+     Low quality score threhold: 5
+     Checking input read files : done
+
+Counting the number of k-mers
+terminate called after throwing an instance of 'boost::filesystem::filesystem_error'
+  what():  boost::filesystem::remove: Device or resource busy: "/u/home/s/serghei/project/code/ec2/wrappers/example/bless/one_output_file.00000/.panfs.506010ac.1507920213327335000"
+[login3:07924] *** Process received signal ***
+[login3:07924] Signal: Aborted (6)
+[login3:07924] Signal code:  (-6)
+[login3:07924] [ 0] /lib64/libpthread.so.0(+0xf7e0)[0x7f6ba6f4e7e0]
+[login3:07924] [ 1] /lib64/libc.so.6(gsignal+0x35)[0x7f6ba6bdd495]
+[login3:07924] [ 2] /lib64/libc.so.6(abort+0x175)[0x7f6ba6bdec75]
+[login3:07924] [ 3] /u/local/compilers/gcc/4.9.3/lib64/libstdc++.so.6(_ZN9__gnu_cxx27__verbose_terminate_handlerEv+0x15d)[0x7f6ba786c07d]
+[login3:07924] [ 4] /u/local/compilers/gcc/4.9.3/lib64/libstdc++.so.6(+0x5e0e6)[0x7f6ba786a0e6]
+[login3:07924] [ 5] /u/local/compilers/gcc/4.9.3/lib64/libstdc++.so.6(+0x5e131)[0x7f6ba786a131]
+[login3:07924] [ 6] /u/local/compilers/gcc/4.9.3/lib64/libstdc++.so.6(+0x5e348)[0x7f6ba786a348]
+[login3:07924] [ 7] /u/home/s/serghei/code/import/bless/bless[0x467c7c]
+[login3:07924] [ 8] /u/home/s/serghei/code/import/bless/bless[0x468863]
+[login3:07924] [ 9] /u/home/s/serghei/code/import/bless/bless[0x468c9a]
+[login3:07924] [10] /u/home/s/serghei/code/import/bless/bless[0x4692c5]
+[login3:07924] [11] /u/home/s/serghei/code/import/bless/bless[0x459b4e]
+[login3:07924] [12] /u/home/s/serghei/code/import/bless/bless[0x45c034]
+[login3:07924] [13] /u/home/s/serghei/code/import/bless/bless[0x45e87f]
+[login3:07924] [14] /lib64/libc.so.6(__libc_start_main+0xfd)[0x7f6ba6bc9d1d]
+[login3:07924] [15] /u/home/s/serghei/code/import/bless/bless[0x40e1fd]
+[login3:07924] *** End of error message ***
+Fri Oct 13 11:45:18 PDT 2017 --- TOTAL RUNTIME: 0:00:00:0.1239
+Fri Oct 13 11:45:18 PDT 2017 --- FINISHED RUNNING bless 
+Fri Oct 13 11:45:18 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 11:45:18 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

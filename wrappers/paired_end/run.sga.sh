@@ -68,7 +68,7 @@ outdir_abs=$PWD
 cd $pwd
 cat $input1 $input2 > $outdir_abs/one_input_file.fastq
 
-logfile=$outdir_abs/report.log
+logfile=$outdir_abs/report_${toolName}_${kmer}.log
 echo "START" >> $logfile
 
 # -----------------------------------
@@ -119,7 +119,7 @@ now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 
-cat one_output_file.out.fastq | gzip > ${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
+cat one_output_file.out.fastq | gzip > ${toolName}_$(basename ${input1%.*})_${kmer}.corrected.fastq.gz
 rm one_output_file.preprocessed.fastq
 rm one_output_file.out.fastq
 rm one_output_file.*

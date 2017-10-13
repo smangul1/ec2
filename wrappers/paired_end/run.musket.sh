@@ -2,8 +2,6 @@
 
 AUTHOR="imandric1"
 
-
-
 ################################################################
 ##########          The main template script          ##########
 ################################################################
@@ -26,7 +24,7 @@ toolPath="/u/home/a/arvin/bin/musket"
 
 
 
-if [ $# -lt 5 ]
+if [ $# -lt 4 ]
 then
 echo "********************************************************************"
 echo "Script was written for project : Best practices for conducting benchmarking in the most comprehensive and reproducible way"
@@ -36,8 +34,7 @@ echo ""
 echo "1 <input1> - _1.fastq"
 echo "2 <input2> - _2.fastq"
 echo "3 <outdir> - dir to save the output"
-echo "4 <kmer1>  - kmer length"
-echo "5 <kmer2>  - kmer number (see musket's help)"
+echo "4 <kmer>  - kmer length"
 echo "--------------------------------------"
 exit 1
 fi
@@ -50,8 +47,8 @@ input2=$2
 outdir=$3
 
 # extra part (tool specific)
-kmer1=$4
-kmer2=$5
+kmer=$4
+
 
 
 # STEP 0 - create output directory if it does not exist
@@ -61,7 +58,7 @@ pwd=$PWD
 cd $outdir
 outdir=$PWD
 cd $pwd
-logfile=$outdir/report.log
+logfile=$outdir/report_${toolName}_${kmer}.log
 
 # -----------------------------------------------------
 
@@ -84,7 +81,7 @@ printf "%s --- RUNNING %s\n" "$now" $toolName >> $logfile
 
 # run the command
 res1=$(date +%s.%N)
-$toolPath -k $kmer1 $kmer2 -o $outdir/one_output_file.fastq $outdir/merged_input_file.fastq >> $logfile 2>&1
+$toolPath -k $kmer "" -o $outdir/one_output_file.fastq $outdir/merged_input_file.fastq >> $logfile 2>&1
 res2=$(date +%s.%N)
 dt=$(echo "$res2 - $res1" | bc)
 dd=$(echo "$dt/86400" | bc)

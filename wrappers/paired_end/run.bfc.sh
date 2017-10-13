@@ -61,7 +61,7 @@ pwd=$PWD
 cd $outdir
 outdir=$PWD
 cd $pwd
-logfile=$outdir/report.log
+logfile=$outdir/report_${toolName}_${kmer}.log
 
 # -----------------------------------------------------
 
@@ -84,7 +84,7 @@ printf "%s --- RUNNING %s\n" "$now" $toolName >> $logfile
 
 # run the command
 res1=$(date +%s.%N)
-$toolPath -s $glength -k $kmer $outdir/merged_input_file.fastq > $outdir/one_output_file.fastq 2>>$logfile
+$toolPath -k $kmer $outdir/merged_input_file.fastq > $outdir/one_output_file.fastq 2>>$logfile
 res2=$(date +%s.%N)
 dt=$(echo "$res2 - $res1" | bc)
 dd=$(echo "$dt/86400" | bc)
@@ -113,7 +113,7 @@ now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 
-cat $outdir/one_output_file.fastq | gzip > $outdir/${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
+cat $outdir/one_output_file.fastq | gzip > $outdir/${toolName}_$(basename ${input1%.*})_${kmer}.corrected.fastq.gz
 
 now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT DONE\n" "$now" >> $logfile

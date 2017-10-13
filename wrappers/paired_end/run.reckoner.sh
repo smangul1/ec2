@@ -37,7 +37,7 @@ echo "1 <input1> - _1.fastq"
 echo "2 <input2> - _2.fastq"
 echo "3 <outdir> - dir to save the output"
 echo "4 <kmer>   - kmer length"
-echo "5 <glen>   - approximate genome size"
+#echo "5 <glen>   - approximate genome size"
 echo "--------------------------------------"
 exit 1
 fi
@@ -51,13 +51,13 @@ outdir=$3
 
 # extra part (tool specific)
 kmer=$4
-glen=$5
+#glen=$5
 
 
 # STEP 0 - create output directory if it does not exist
 
 mkdir -p $outdir
-logfile=$outdir/report.log
+logfile=$outdir/report_${toolName}_${kmer}.log
 
 # -----------------------------------------------------
 
@@ -84,7 +84,7 @@ printf "%s --- RUNNING %s\n" "$now" $toolName >> $logfile
 
 # run the command
 res1=$(date +%s.%N)
-$toolPath -read $outdir_abs/one_input_file.fastq -kmerlength $kmer -genome $glen -prefix $outdir_abs -threads 1 >> $logfile 2>&1
+$toolPath -read $outdir_abs/one_input_file.fastq -kmerlength $kmer  -prefix $outdir_abs -threads 1 >> $logfile 2>&1
 res2=$(date +%s.%N)
 dt=$(echo "$res2 - $res1" | bc)
 dd=$(echo "$dt/86400" | bc)
@@ -113,7 +113,7 @@ now="$(date)"
 printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 
-cat $outdir_abs/one_input_file.corrected.fastq | gzip > $outdir/${toolName}_$(basename ${input1%.*}).corrected.fastq.gz
+cat $outdir_abs/one_input_file.corrected.fastq | gzip > $outdir/${toolName}_$(basename ${input1%.*})_${kmer}.corrected.fastq.gz
 rm $outdir_abs/one_input_file.corrected.fastq
 
 rm $outdir_abs/one_input_file.fastq  
