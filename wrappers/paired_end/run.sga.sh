@@ -68,7 +68,8 @@ outdir_abs=$PWD
 cd $pwd
 cat $input1 $input2 > $outdir_abs/one_input_file.fastq
 
-logfile=$outdir_abs/report_${toolName}_${kmer}.log
+logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${kmer}.log
+
 echo "START" >> $logfile
 
 # -----------------------------------

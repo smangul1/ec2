@@ -61,7 +61,7 @@ pwd=$PWD
 cd $outdir
 outdir=$PWD
 cd $pwd
-logfile=$outdir/report_${toolName}_${kmer}.log
+logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${kmer}.log
 
 # -----------------------------------------------------
 
