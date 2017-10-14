@@ -65,7 +65,7 @@ cd $outdir
 outdir_abs=$PWD
 cd $pwd
 
-logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${kmer}.log
+logfile=$outdir/report_$(basename ${input%.*})_${toolName}_${kmer}.log
 
 echo "START" > $logfile
 

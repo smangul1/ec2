@@ -53,7 +53,7 @@ kmer=$3
 # STEP 0 - create output directory if it does not exist
 
 mkdir -p $outdir
-logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${kmer}.log
+logfile=$outdir/report_$(basename ${input%.*})_${toolName}_${kmer}.log
 # -----------------------------------------------------
 
 echo "START" >> $logfile

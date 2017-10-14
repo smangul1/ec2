@@ -49,7 +49,7 @@ outdir=$2
 # extra part (tool specific)
 kmer=$3
 # We assume the same read length
-rlen=$(head -n 2 $input1 | tail -n 1 | awk '{print length($1)}')
+rlen=$(head -n 2 $input | tail -n 1 | awk '{print length($1)}')
 
 # STEP 0 - create output directory if it does not exist
 
@@ -58,7 +58,7 @@ pwd=$PWD
 cd $outdir
 outdir=$PWD
 cd $pwd
-logfile=$outdir/report_$(basename ${input1%.*})_${toolName}_${kmer}.log
+logfile=$outdir/report_$(basename ${input%.*})_${toolName}_${kmer}.log
 # -----------------------------------------------------
 
 echo "START" >> $logfile
