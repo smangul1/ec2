@@ -1,3 +1,5 @@
+
+/u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_16X_R1.fastq
 /u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_16X_R2.fastq
 /u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_1X_R1.fastq
 /u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_1X_R2.fastq
