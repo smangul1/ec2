@@ -1,0 +1,31 @@
+START
+Fri Oct 13 22:55:25 PDT 2017 --- RUNNING musket
+The kmer sizes that will be used are as follows: 
+	Kmer size: 18 and estimated number of k-mers: 4443351
+#master threads: 1 #worker threads: 1
+Determine all non-unique k-mers
+Time taken: 0.0146761 seconds
+Calculate the multiplicity of each k-mer
+Time taken: 0.00801706 seconds
+Remove unique k-mers in the hash tables
+Time taken: 0.000144005 seconds
+Estimate the minimum multiplicity threshold
+For k-mer size 18
+Maximum multiplicity 88
+	Coverage: 45728
+	Average coverage: 7.26072
+	Number of k-mers 6298
+	K-mer frequency histogram (>=2): 
+1782,956,717,454,310,287,349,170,142,110,82,105,94,66,55,51,28,40,77,41,55,29,13,12,16,17,9,16,10,24,15,6,10,14,14,5,5,12,16,5,5,3,4,3,4,4,6,1,5,0,2,4,3,0,7,3,5,0,0,0,1,1,1,1,0,1,0,0,0,0,0,0,1,2,0,4,1,3,0,1,1,0,0,0,0,1,
+Will estimate the minimum multiplicty from the k-mer histogram
+Min multi:  8
+Time taken: 0.00110888 seconds
+Perform error correction
+Processed 608 reads
+Finish the error correction
+Overall execution time 1.029 seconds
+Fri Oct 13 22:55:26 PDT 2017 --- TOTAL RUNTIME: 0:00:00:1.0523
+Fri Oct 13 22:55:26 PDT 2017 --- FINISHED RUNNING musket 
+Fri Oct 13 22:55:26 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 22:55:26 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

@@ -1,0 +1,19 @@
+START
+Fri Oct 13 22:55:31 PDT 2017 --- RUNNING racer
+reading input file...done reading input file
+Genome length = 3000
+Coverage = 20
+Maximum read length = 100
+Number of reads = 608
+Number of threads = 12
+correcting reads...done correcting reads
+writing back the reads...done
+Total time building witnesses and counters = 0 seconds.
+Total time correcting = 0 seconds.
+Total time = 0 seconds.
+Peak Memory = 84 MB.
+Fri Oct 13 22:55:31 PDT 2017 --- TOTAL RUNTIME: 0:00:00:0.0788
+Fri Oct 13 22:55:31 PDT 2017 --- FINISHED RUNNING racer 
+Fri Oct 13 22:55:31 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 22:55:31 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

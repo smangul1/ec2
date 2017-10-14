@@ -1,0 +1,54 @@
+START
+Fri Oct 13 22:55:33 PDT 2017 --- RUNNING sga
+Parameters:
+QualTrim: 0
+QualFilter: no filtering
+HardClip: 0
+Min length: 40
+Sample freq: 1
+PE Mode: 0
+Quality scaling: 2
+MinGC: 0
+MaxGC: 1
+Outfile: one_output_file.preprocessed.fastq
+Orphan file: none
+Discarding sequences with ambiguous bases
+Seed: 1507960533
+Processing /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+
+
+Preprocess stats:
+Reads parsed:	608
+Reads kept:	608 (1)
+Reads failed primer screen:	0 (0)
+Bases parsed:	60800
+Bases kept:	60800 (1)
+Number of incorrectly paired reads that were discarded: 0
+[timer - sga preprocess] wall clock: 0.02s CPU: 0.00s
+[timer - sga index] wall clock: 0.28s CPU: 0.14s
+Building index for one_output_file.preprocessed.fastq in memory using ropebwt
+	 done bwt construction, generating .sai file
+	 done rbwt construction, generating .rsai file
+[timer - sga::correct] wall clock: 0.15s CPU: 0.14s
+Correcting sequencing errors for one_output_file.preprocessed.fastq
+
+RLBWT info:
+Large Sample rate: 8192
+Small Sample rate: 128
+Contains 61408 symbols in 10216 runs (6.0110 symbols per run)
+Marker Memory -- Small Markers: 5772 (0.0 MB) Large Markers: 432 (0.0 MB)
+Total Memory -- Markers: 6204 (0.0 MB) Str: 10216 (0.0 MB) Misc: 152 Total: 16572 (0.015804 MB)
+N: 61408 Bytes per symbol: 0.269867
+
+ecParams.min_count_max_base = 4
+ecParams.base_threshold = 2
+ecParams.countOffset = 1
+[sga::process] processed 608 sequences in 0.147370s (4125.670082 sequences/s)
+Reads passed kmer QC check: 411
+Reads passed overlap QC check: 0
+Reads failed QC: 197
+Fri Oct 13 22:55:34 PDT 2017 --- TOTAL RUNTIME: 0:00:00:1.1763
+Fri Oct 13 22:55:34 PDT 2017 --- FINISHED RUNNING sga 
+Fri Oct 13 22:55:34 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 22:55:34 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

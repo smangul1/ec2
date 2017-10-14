@@ -1,0 +1,25 @@
+START
+Fri Oct 13 22:54:26 PDT 2017 --- RUNNING coral
+Counting reads in file /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+Found 608 reads
+Reading reads from file /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+Found 608 reads
+Length of k-mers: 18
+Counting k-mers
+0 reads, 0 different k-mers
+11034 different k-mers, 50464 total k-mers
+Constructing read lists
+0 reads
+Q-gram index built.
+Correcting reads
+Thread 0/1 starting
+Thread 0/1 finishing
+Perfect alignments: 39, Good alignments: 28, Bad alignments: 1149
+608 reads were aligned, 165 reads were aligned in a good alignment
+Quick alignments: 6076, Banded alignments: 4419, Full alignments: 0
+Correction finished. Outputting corrected reads.
+Fri Oct 13 22:54:28 PDT 2017 --- TOTAL RUNTIME: 0:00:00:1.5909
+Fri Oct 13 22:54:28 PDT 2017 --- FINISHED RUNNING coral 
+Fri Oct 13 22:54:28 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 22:54:28 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

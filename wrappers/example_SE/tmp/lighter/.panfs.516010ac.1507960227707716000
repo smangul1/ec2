@@ -1,0 +1,21 @@
+ERROR: Could not access file reads/input_1.fastq
+Fri Oct 13 17:04:54 PDT 2017 --- TOTAL RUNTIME: 0:00:00:0.0152
+Fri Oct 13 17:04:54 PDT 2017 --- FINISHED RUNNING lighter 
+Fri Oct 13 17:04:54 PDT 2017 --- TRANSFORMING OUTPUT
+ERROR: Could not access file reads/input_1.fastq
+Fri Oct 13 17:07:44 PDT 2017 --- TOTAL RUNTIME: 0:00:00:0.0084
+Fri Oct 13 17:07:44 PDT 2017 --- FINISHED RUNNING lighter 
+Fri Oct 13 17:07:44 PDT 2017 --- TRANSFORMING OUTPUT
+[2017-10-13 22:48:32] =============Start====================
+[2017-10-13 22:48:32] Scanning the input files to infer alpha(sampling rate)
+[2017-10-13 22:48:32] Average coverage is 20.267 and alpha is 0.345
+[2017-10-13 22:48:32] Bad quality threshold is ","
+[2017-10-13 22:48:32] Finish sampling kmers
+[2017-10-13 22:48:32] Bloom filter A's false positive rate: 0.061023
+[2017-10-13 22:48:32] Finish storing trusted kmers
+[2017-10-13 22:48:32] Finish error correction
+Processed 608 reads:
+	292 are error-free
+	Corrected 523 bases(1.655063 corrections for reads with errors)
+	Trimmed 0 reads with average trimmed bases 0.000000
+	Discard 0 reads

@@ -1,0 +1,78 @@
+START
+Fri Oct 13 22:55:26 PDT 2017 --- RUNNING pollux
+
+Pollux 1.0.2
+Source compiled on Feb  6 2017 at 22:24:23.
+
+Considering argument: -i : number of input files is 1
+Considering argument: -o : output directory is /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/tmp/pollux
+Considering argument: -k : k-mer size is 18
+
+File name: /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+
+ERROR CORRECTION
+
+Creating read objects...
+Reading file: /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+Finished creating read objects!
+
+Constructing k-mers...
+Processing file 1/1...
+0% 5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100% 
+Preprocessing k-mers...
+0% 5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100% 
+Removed 9472 unique k-mers from the set of 22068 total k-mers.
+Resizing...
+Finished resizing...
+Low k-mer count value was observed to be 7.
+Finished preprocessing k-mers!
+
+Finished constructing k-mers!
+
+Correcting reads...
+Correcting file 1/1...
+0% 5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100% 
+
+Corrected...
+Reads with Multiple Corrections: 130
+
+Substitution Corrections: 414
+Single Insertion Corrections: 25
+Single Deletion Corrections: 13
+
+Total Homopolymer Corrections: 116
+
+Breakdown:
+< -10: 0
+-10 : 0
+-9 : 0
+-8 : 0
+-7 : 0
+-6 : 0
+-5 : 0
+-4 : 0
+-3 : 0
+-2 : 14
+-1 : 57
+1 : 45
+2 : 0
+3 : 0
+4 : 0
+5 : 0
+6 : 0
+7 : 0
+8 : 0
+9 : 0
+10 : 0
+> 10: 0
+
+Total Insertions (Single + Homopolymer): 70
+Total Deletions (Single + Homopolymer): 98
+
+Finished correcting reads!
+
+Fri Oct 13 22:55:30 PDT 2017 --- TOTAL RUNTIME: 0:00:00:4.1929
+Fri Oct 13 22:55:30 PDT 2017 --- FINISHED RUNNING pollux 
+Fri Oct 13 22:55:30 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 22:55:30 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

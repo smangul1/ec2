@@ -88,7 +88,7 @@ cd $outdir
 
 
 
-$toolPath -r $input -K $kmer $gl >> report.log 2>&1
+$toolPath -r $input -K $kmer $gl >> $logfile 2>&1
 res2=$(date +%s.%N)
 dt=$(echo "$res2 - $res1" | bc)
 dd=$(echo "$dt/86400" | bc)
@@ -98,10 +98,10 @@ dt3=$(echo "$dt2-3600*$dh" | bc)
 dm=$(echo "$dt3/60" | bc)
 ds=$(echo "$dt3-60*$dm" | bc)
 now="$(date)"
-printf "%s --- TOTAL RUNTIME: %d:%02d:%02d:%02.4f\n" "$now" $dd $dh $dm $ds >> report.log
+printf "%s --- TOTAL RUNTIME: %d:%02d:%02d:%02.4f\n" "$now" $dd $dh $dm $ds >>$logfile
 
 now="$(date)"
-printf "%s --- FINISHED RUNNING %s %s\n" "$now" $toolName >> report.log
+printf "%s --- FINISHED RUNNING %s %s\n" "$now" $toolName >> $logfile
 
 # ---------------------
 
@@ -114,7 +114,7 @@ printf "%s --- FINISHED RUNNING %s %s\n" "$now" $toolName >> report.log
 #     awk '{if(NR%4==1) {printf(">%s\n",substr($0,2));} else if(NR%4==2) print;}' file.fastq > file.fasta
 
 now="$(date)"
-printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> report.log
+printf "%s --- TRANSFORMING OUTPUT\n" "$now" >> $logfile
 
 cat $(basename ${input%.*}).cor.fq | gzip > ${toolName}_$(basename ${input%.*})_${kmer}.corrected.fastq.gz
 cd $pwd

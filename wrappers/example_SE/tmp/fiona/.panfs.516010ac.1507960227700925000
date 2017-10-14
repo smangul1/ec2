@@ -1,0 +1,27 @@
+START
+Fri Oct 13 17:04:54 PDT 2017 --- RUNNING fiona
+Failed to open reads file reads/input_1.fastq
+Exiting ...
+Fri Oct 13 17:04:54 PDT 2017 --- TOTAL RUNTIME: 0:00:00:0.0436
+Fri Oct 13 17:04:54 PDT 2017 --- FINISHED RUNNING fiona 
+Fri Oct 13 17:04:54 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 17:04:54 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONESTART
+Fri Oct 13 17:06:16 PDT 2017 --- RUNNING fiona
+Opening input reads/input_1.fastq
+Opening output /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/tmp/fiona/one_output_file.fasta
+Wrote 608 sequences
+Fri Oct 13 17:07:44 PDT 2017 --- TOTAL RUNTIME: 0:00:01:28.1554
+Fri Oct 13 17:07:44 PDT 2017 --- FINISHED RUNNING fiona 
+Fri Oct 13 17:07:44 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 17:07:44 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONESTART
+Fri Oct 13 22:47:34 PDT 2017 --- RUNNING fiona
+Opening input /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+Opening output /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/tmp/fiona/one_output_file.fasta
+Wrote 608 sequences
+Fri Oct 13 22:48:31 PDT 2017 --- TOTAL RUNTIME: 0:00:00:57.0045
+Fri Oct 13 22:48:31 PDT 2017 --- FINISHED RUNNING fiona 
+Fri Oct 13 22:48:31 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 22:48:31 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

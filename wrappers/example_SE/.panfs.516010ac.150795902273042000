@@ -4,8 +4,8 @@
 # file with sample commands for all the tools
 
 
-FILE1=$PWD/reads/input_1.fastq # first read file
-
+FILE1=reads/input_1.fastq # first read file
+#FILE2=reads/input_2.fastq # second read file
 KMER=18                   # kmer length
 KMER2=3000000             # estimated number of all kmers
 GLEN=3000                 # estimated genome length

@@ -1,0 +1,10 @@
+START
+Fri Oct 13 22:54:28 PDT 2017 --- RUNNING fiona
+Opening input /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+Opening output /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/tmp/fiona/one_output_file.fasta
+Wrote 608 sequences
+Fri Oct 13 22:55:25 PDT 2017 --- TOTAL RUNTIME: 0:00:00:56.9244
+Fri Oct 13 22:55:25 PDT 2017 --- FINISHED RUNNING fiona 
+Fri Oct 13 22:55:25 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 22:55:25 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

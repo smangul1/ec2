@@ -1,0 +1,46 @@
+START
+Fri Oct 13 17:04:52 PDT 2017 --- RUNNING bfc
+[M::main] set k to 18
+Fri Oct 13 17:04:54 PDT 2017 --- TOTAL RUNTIME: 0:00:00:1.9465
+Fri Oct 13 17:04:54 PDT 2017 --- FINISHED RUNNING bfc 
+Fri Oct 13 17:04:54 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 17:04:54 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONESTART
+Fri Oct 13 17:06:09 PDT 2017 --- RUNNING bfc
+[M::main] set k to 18
+[M::bfc_count_cb] read 608 sequences
+[M::bfc_count_cb] read 0 sequences
+[M::bfc_count_cb @1.6*100.1%] processed 608 sequences; # distinct k-mers: 6296
+[M::bfc_count_cb] read 0 sequences
+[M::bfc_correct @1.7*100.1%] Starting...
+[M::bfc_ec_cb] read 608 sequences
+[M::bfc_ec_cb] read 0 sequences
+[M::bfc_ec_cb @1.7*100.1%] processed 608 sequences
+[M::bfc_ec_cb] read 0 sequences
+[M::main] Version: r181
+[M::main] CMD: /u/home/d/douglasy/bfc/bfc -k 18 reads/input_1.fastq
+[M::main] Real time: 1.766 sec; CPU: 1.761 sec
+Fri Oct 13 17:06:11 PDT 2017 --- TOTAL RUNTIME: 0:00:00:1.8457
+Fri Oct 13 17:06:11 PDT 2017 --- FINISHED RUNNING bfc 
+Fri Oct 13 17:06:11 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 17:06:11 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONESTART
+Fri Oct 13 22:47:32 PDT 2017 --- RUNNING bfc
+[M::main] set k to 18
+[M::bfc_count_cb] read 608 sequences
+[M::bfc_count_cb] read 0 sequences
+[M::bfc_count_cb @0.3*88.4%] processed 608 sequences; # distinct k-mers: 6296
+[M::bfc_count_cb] read 0 sequences
+[M::bfc_correct @0.3*88.0%] Starting...
+[M::bfc_ec_cb] read 608 sequences
+[M::bfc_ec_cb] read 0 sequences
+[M::bfc_ec_cb @0.4*89.5%] processed 608 sequences
+[M::bfc_ec_cb] read 0 sequences
+[M::main] Version: r181
+[M::main] CMD: /u/home/d/douglasy/bfc/bfc -k 18 /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+[M::main] Real time: 0.436 sec; CPU: 0.390 sec
+Fri Oct 13 22:47:33 PDT 2017 --- TOTAL RUNTIME: 0:00:00:0.5472
+Fri Oct 13 22:47:33 PDT 2017 --- FINISHED RUNNING bfc 
+Fri Oct 13 22:47:33 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 22:47:33 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE

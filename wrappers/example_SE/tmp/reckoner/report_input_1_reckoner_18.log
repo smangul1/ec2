@@ -1,0 +1,80 @@
+START
+Fri Oct 13 22:55:31 PDT 2017 --- RUNNING reckoner
+RECKONER ver. 1.1
+
+Parsing arguments is finished
+     Read File 1
+          Name:                    : /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+          Compressed:              : N
+     Log File Name                 : /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/tmp/reckoner/input_1.log
+     K-mer Length                  : 18
+     Number of Threads             : 1
+
+##################################################
+CHECKING READS
+##################################################
+/u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+     Quality score offset          : 33
+
+##################################################
+K - MER COUNTING
+##################################################
+**
+Stage 1: 0%Stage 1: 100%
+Stage 2: 0%Stage 2: 78%Stage 2: 92%Stage 2: 98%Stage 2: 99%Stage 2: 100%
+1st stage: 1.61187s
+2nd stage: 0.350418s
+Total    : 1.96228s
+Tmp size : 0MB
+
+Stats:
+   No. of k-mers below min. threshold :         4736
+   No. of k-mers above max. threshold :            0
+   No. of unique k-mers               :        11034
+   No. of unique counted k-mers       :         6298
+   Total no. of k-mers                :        50464
+   Total no. of reads                 :          608
+   Total no. of super-k-mers          :         9824
+
+##################################################
+DETERMINING CUTOFF THRESHOLD
+##################################################
+Cutoff: 5
+
+##################################################
+REMOVING UNTRUSTED K - MERS
+##################################################
+in1: 0% in1: 45% in1: 100% 
+
+##################################################
+CORRECTING ERRORS
+##################################################
+/u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+     Number of corrected reads     : 174
+
+Running Time
+     Checking reads
+          /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+               Start: Fri Oct 13 22:55:31 2017
+               End  : Fri Oct 13 22:55:31 2017
+     Counting k-mers
+          Start: Fri Oct 13 22:55:31 2017
+          End  : Fri Oct 13 22:55:33 2017
+     Determining cutoff threshold
+          Start: Fri Oct 13 22:55:33 2017
+          End  : Fri Oct 13 22:55:33 2017
+     Removing untrusted k-mers
+          Start: Fri Oct 13 22:55:33 2017
+          End  : Fri Oct 13 22:55:33 2017
+     Correcting errors in reads
+          /u/home/s/serghei/collab/code/ec2/wrappers/example_SE/reads/input_1.fastq
+               Start: Fri Oct 13 22:55:33 2017
+               End  : Fri Oct 13 22:55:33 2017
+
+The program is successfully completed
+
+Fri Oct 13 22:55:33 PDT 2017 --- TOTAL RUNTIME: 0:00:00:2.2876
+Fri Oct 13 22:55:33 PDT 2017 --- FINISHED RUNNING reckoner 
+Fri Oct 13 22:55:33 PDT 2017 --- TRANSFORMING OUTPUT
+Fri Oct 13 22:55:33 PDT 2017 --- TRANSFORMING OUTPUT DONE
+DONE
