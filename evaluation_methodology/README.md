@@ -18,38 +18,44 @@ When we define PPV, Sensitivity, Gain and Accuracy
 
 We simulate the TCR transcrips as described in here Mangul, Serghei, et al. "Profiling adaptive immune repertoires across multiple human tissues by RNA Sequencing." bioRxiv (2017): 089235.
 
-In total we simulated ? transcripts. We transcripts are available here
+In total we simulated 100 transcripts. We transcripts are available here
 
 ```
-ec2/evaluation_methodology/data
+/u/home/i/imandric/project-zarlab/ErrorCorrection/DATASETS/S2_dataset/reference/[IGH|TRA]/trans.fa
 ```
 
 
 We simulate reads from the IGH and TCRA transcripts (reffered as immune transcripts) using this command 
 
 ```
-???
+        ./simNGS/bin/simLibrary -r $l -i $ins -x $k imrep_revision2/$genename/trans.fa > imrep_revision2/$genename/ref.frag
+        ./simNGS/bin/simNGS runfiles/$l.runfile imrep_revision2/$genename/ref.frag -p paired > imrep_revision2/$genename/sim_rl_${l}_cov_${k}.fq
 ```
+Here -r is read length, -i insert size, -x coverage, genename is either TRA or IGH.
 
-Simulator simulates reads with ? error rate. To obtain the error-free version of the reads (golden standard data), we map reads onto the immune transcripts using this command 
+
+Simulator simulates reads with XXX error rate. More precisely, it uses Illumina profile files which originate from the sequencing machine. 
+To obtain the error-free version of the reads (golden standard data), we map reads onto the immune transcripts using this command 
 
 ```
-???
+bowtie2-build -q ${transcriptFile} ${indexDir}/index
+bowtie2 --quiet --no-hd --reorder -k 10 -q -p 10 -x ${indexDir}/index -U ${reads} -S reads.sam
 ```
 
 
 To obtain the error-free version of the read we correct all mistahes with the reference using this script
 
 ```
-Igor, please upload all the scripts here
-ec2/evaluation_methodology/code/
+/u/home/i/imandric/project-zarlab/ErrorCorrection/DATASETS/S2_dataset/ground_truth.py
 ```
 
 After we obtain golden standard reads, we use the following scripts to compute the statistical measures 
 
 ```
-????
+https://github.com/smangul1/ec/tree/master/scripts
 ```
+
+Namely, the scripts are: check_ED_bless.py,check_GT_bless.py, gain.py.
 
 The script outputs 
 Number of TP, FP, FN, TN and Gain and Accuracy
