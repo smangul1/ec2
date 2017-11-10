@@ -67,11 +67,11 @@ cd /u/home/i/imandric/project-zarlab/ErrorCorrection/DATASETS/wgs_simulation/scr
 ```
 Note that the last command is in the file run.t1.sim_rl_100_1.sh in the same directory.
 Explanation:
-a) -r 0.001 -> mutation rate 0.001
-b) -R 0.0001 -> fraction of indels
-c) -e 0.005 -> base error rate
-d) -1 100 -2 100 -> read length 100
-e) -N 1265528 - number of reads
+- a) -r 0.001 -> mutation rate 0.001
+- b) -R 0.0001 -> fraction of indels
+- c) -e 0.005 -> base error rate
+- d) -1 100 -2 100 -> read length 100
+- e) -N 1265528 - number of reads
 
 
 We simulate 2 different datasets at different error rates. 
@@ -80,20 +80,21 @@ We simulate 2 different datasets at different error rates.
 
 It seems that I forgot to set indels fraction to 0. That's ok, I just avoid checking these reads.
 
-```
-???
-```
 
-To obtain the error-free version of the read we correct all mistahes with the reference, ignoring positions with SNPs using this script
-
-```
-```
 
 The list of SNPs is available here
 
 ```
-ec2/evaluation_methodology/data
+/u/home/i/imandric/project-zarlab/ErrorCorrection/DATASETS/wgs_simulation/scripts_and_logs/t1
 ```
+
+and
+
+```
+/u/home/i/imandric/project-zarlab/ErrorCorrection/DATASETS/wgs_simulation/scripts_and_logs/t3
+```
+
+
 
 # RepSeq_real
 
