@@ -101,20 +101,29 @@ and
 We obtain TCR-Seq data from here
 
 ```
-Igor, provide the path and the paper
+https://trace.ncbi.nlm.nih.gov/Traces/sra/?study=SRP045430
  ```
 
 
 Given a file with UMIs we run this scripts to group the UMIs and correct the errors. Those reads are considered as golden standard reads. 
 
-
-The original reads with UMIs are here
-
 ```
-Igor, please provide the path oh hoffman2
+/u/home/n/ngcrawfo/project-zarlab/igor/VIRAL_CORRECTION/tools/data/datasets_no_barcodes_no_index/for_paper/ground_truth_TCRSEQ.py $READS_NO_BARCODE $BARCODE_FASTA_FILE $OUTPUT_FILE $CLUSTER_THRESHOLD $DISREGARD_FREQUENCY
+```
+Here CLUSTER_THRESHOLD is 5 by default (minimal nr of reads in a cluster) and DISREGARD_FREQUENCY is if the most popular nucleotide frequency less than this, drop the cluster.
+
+
+The UMIs are here
+```
+/u/home/n/ngcrawfo/project-zarlab/igor/VIRAL_CORRECTION/tools/data/datasets_no_barcodes_no_index/for_paper/barcodes
 ```
 
-The reads UMIs removed were provided for EC tools
+
+The original reads without UMIs are here
+```
+/u/home/n/ngcrawfo/project-zarlab/igor/VIRAL_CORRECTION/tools/data/datasets_no_barcodes_no_index/for_paper/without_barcode
+```
+
 
 
 
