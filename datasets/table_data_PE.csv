@@ -1,4 +1,5 @@
 sample,genom length,record
+/u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_16X_R1.fastq,3300000000,1
 /u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_16X_R2.fastq,3300000000,1
 /u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_1X_R1.fastq,3300000000,1
 /u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_1X_R2.fastq,3300000000,1
@@ -8,6 +9,7 @@ sample,genom length,record
 /u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_32X_R2.fastq,3300000000,1
 /u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_4X_R1.fastq,3300000000,1
 /u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_4X_R2.fastq,3300000000,1
+/u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_8X_R1.fastq,3300000000,1
 /u/home/s/serghei/project/EC_survey/WGS_real_GIB/GIB_NA12878_HG001_8X_R2.fastq,3300000000,1
 /u/home/s/serghei/project/EC_survey/RepSeq_sim/IGH_sim_rl_100_cov_128_R1.fastq,500000,1
 /u/home/s/serghei/project/EC_survey/RepSeq_sim/IGH_sim_rl_100_cov_128_R2.fastq,500000,1
