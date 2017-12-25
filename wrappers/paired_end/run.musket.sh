@@ -81,7 +81,7 @@ printf "%s --- RUNNING %s\n" "$now" $toolName >> $logfile
 
 # run the command
 res1=$(date +%s.%N)
-$toolPath -k $kmer "" -o $outdir/one_output_file.fastq $outdir/merged_input_file.fastq >> $logfile 2>&1
+$toolPath -k $kmer 134217728 -o $outdir/one_output_file.fastq $outdir/merged_input_file.fastq >> $logfile 2>&1
 res2=$(date +%s.%N)
 dt=$(echo "$res2 - $res1" | bc)
 dd=$(echo "$dt/86400" | bc)
