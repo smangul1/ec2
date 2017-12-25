@@ -88,6 +88,7 @@ res1=$(date +%s.%N)
 pwd=$PWD
 cd $outdir_abs
 echo "$toolPath preprocess one_input_file.fastq -o one_output_file.preprocessed.fastq >> $logfile 2>&1"
+$toolPath preprocess one_input_file.fastq -o one_output_file.preprocessed.fastq >> $logfile 2>&1
 $toolPath index -a ropebwt one_output_file.preprocessed.fastq >> $logfile 2>&1
 $toolPath correct -k $kmer -o one_output_file.out.fastq one_output_file.preprocessed.fastq >> $logfile 2>&1
 
