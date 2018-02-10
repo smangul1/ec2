@@ -9,7 +9,7 @@ AUTHOR="imandric1"
 ################################################################
 
 toolName="rcorrector"
-toolPath="/u/home/k/keithgmi/project-zarlab/rcorrector/Rcorrector"
+toolPath="/u/home/k/keithgmi/project-zarlab/rcorrector/Rcorrector/perl run_rcorrector.pl"
 
 # STEPS OF THE SCRIPT
 # 1) prepare input if necessary
@@ -70,7 +70,7 @@ echo "START" >> $logfile
 
 # cat $input1 $input2 > $outdir/merged_input_file.fastq
 
-cat $input1 $input2 > $outdir/merged_input_file.fastq
+#cat $input1 $input2 > $outdir/merged_input_file.fastq
 
 # -----------------------------------
 
@@ -86,7 +86,7 @@ printf "%s --- RUNNING %s\n" "$now" $toolName >> $logfile
 # run the command
 res1=$(date +%s.%N)
 # $toolPath -fq $outdir/merged_input_file.fastq -p 1 -o $outdir/one_output_file.fastq -k $kmer >> $logfile 2>&1
-$toolPath  perl run_rcorrector.pl -1 /wrappers/example_PE/reads/input_1.fastq -2 /wrappers/example_PE/reads/input_2.fastq -k $kmer -od outdir >> $logfile 2>&1
+$toolPath -1 /wrappers/example_PE/reads/input_1.fastq -2 /wrappers/example_PE/reads/input_2.fastq -k $kmer -od $outdir/one_output_file.fastq >> $logfile 2>&1
 res2=$(date +%s.%N)
 dt=$(echo "$res2 - $res1" | bc)
 dd=$(echo "$dt/86400" | bc)
