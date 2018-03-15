@@ -16,6 +16,7 @@ from Bio.SeqRecord import SeqRecord
 from Bio.Align import MultipleSeqAlignment
 from Bio import pairwise2
 from Bio.pairwise2 import format_alignment
+from logging import log, error
 
 
 def analyze_corrections(true_sequence, raw_sequence, ec_sequence):
@@ -30,29 +31,37 @@ def analyze_corrections(true_sequence, raw_sequence, ec_sequence):
             Object 2: (string) seq_ID which dictates the read level classification (one of the following list):
                 EX:        ["TN", "FP(NORMAL)", "FP(INDEL)", "FP(TRIMMING)", "TP", "FN"]
     """
-    alignments = pairwise2.align.globalms(true_sequence, raw_sequence, 5, -4, -3, -0.1)
 
-    true_aligned_raw = alignments[0][0]
-    raw_aligned_true = alignments[0][1]
+    ###Series of global alignments that act as a sort of multiple sequence aligner.
+    ## this performs a star based "MSA" assuming that True and Raw reads are the most similar(due to potential trims)
+    #1. Alignment 1- true_sequence|raw_sequence = true_2, raw_3
+    #2. Alignment 2- true_2|ec_sequence = true_3, ec_3
 
-    alignments_2 = pairwise2.align.globalms(true_aligned_raw, ec_sequence, 5, -4, -3, -0.1)
+    #TODO: play with weights on these.
+    #
+    alignments = pairwise2.align.globalms(true_sequence, raw_sequence, 5, -4, -10, -0.1)
 
-    true_aligned_raw_ec = alignments_2[0][0]
-    ec_aligned_true = alignments_2[0][1]
+    true_2 = alignments[0][0]
+    raw_3 = alignments[0][1]
 
-    alignments_3 = pairwise2.align.globalms(ec_aligned_true, raw_aligned_true, 5, -4, -3, -0.1)
+    alignments_2 = pairwise2.align.globalms(true_2, ec_sequence, 5, -4, -7, -0.1)
 
-    ec_aligned_final = alignments_2[0][0]
-    raw_aligned_final = alignments_2[0][1]
+    true_3 = alignments_2[0][0]
+    ec_3 = alignments_2[0][1]
 
-    print "True:", true_aligned_raw_ec
-    print "Raw: ", raw_aligned_final
-    print "EC:  ", ec_aligned_final
+    #TODO: get rid of this "MSA" printer
+    print "True:", true_3
+    print "Raw: ", raw_3
+    print "EC:  ", ec_3
 
+
+    #base level statistics now that there is an "MSA" that we can compare.
     stats_dict = {'TN':0, 'TP':0, 'FN':0, 'FP':0, 'INDEL':0, 'TRIM': 0}
 
-    if len(true_aligned_raw_ec) == len(ec_aligned_final) == len(raw_aligned_final):
-        for true_bp, raw_bp, ec_bp in zip(true_aligned_raw_ec, raw_aligned_final, ec_aligned_final):
+    #check to make sure the "MSA" is same length... hopefully this should always be the case
+    if len(true_3) == len(raw_3) == len(ec_3):
+        #iterate through each column of the "MSA"
+        for true_bp, raw_bp, ec_bp in zip(true_3, raw_3, ec_3):
             if true_bp == raw_bp == ec_bp:
                 stats_dict['TN'] += 1
             elif true_bp == raw_bp != ec_bp:
@@ -63,13 +72,13 @@ def analyze_corrections(true_sequence, raw_sequence, ec_sequence):
                 stats_dict['FN'] += 1
             if (true_bp == "-") or (raw_bp == "-") or (ec_bp == "-"):
                 stats_dict['INDEL'] += 1
+        #TODO: Add catch for trimming
 
 
-        ##this portion decides what to classify the sequence as a whole as.
-
+        ##this portion decides what to classify the sequence as a whole as once the bases have been analyzed
         seq_classes = ["TN", "FP(NORMAL)", "FP(INDEL)", "FP(TRIMMING)", "TP", "FN"]
         seq_ID = ""
-        if stats_dict['TN'] == len(true_aligned_raw_ec):
+        if stats_dict['TN'] == len(true_3):
             seq_ID = seq_classes[0]
         elif stats_dict['FP'] != 0 and stats_dict['TP'] != 0 and stats_dict['INDEL'] == 0:
             seq_ID = seq_classes[1]
@@ -78,25 +87,28 @@ def analyze_corrections(true_sequence, raw_sequence, ec_sequence):
         elif stats_dict['TP'] != 0 and stats_dict['FP'] == 0:
             seq_ID = seq_classes[4]
 
-        #what to do about number 7, also need to incorporate the "FN"
+        #TO DO: what to do about number 7, also need to incorporate the "FN"
 
         print "BASE LEVEL: ", stats_dict
         print "READ LEVEL: ", seq_ID
 
+        return stats_dict, seq_ID
+
     else:
-        print true_aligned_raw_ec, raw_aligned_final, ec_aligned_final
+        #TODO: Log the name of the read and other pertenant info.
+        #log.error(true_3, raw_3, ec_3)... look at apeiron code for library
+        return None, None
 
-    return stats_dict, seq_ID
-
+    
 ### Aggregate the results from each read into a data structure that can easily incorporate into excel.
 ### using the tool, dataset, and sequence ID.
 
 
 
 
-true_sequence = 'ACCGGTCCA'
-raw_sequence =  'ACCGGTCCA'
-ec_sequence =   'CCGTGTCC'
+true_sequence = 'ACCTTGTCACCCCCCCCC'
+raw_sequence =  'ACCTCGTCACCCCCCGGG'
+ec_sequence =   'ACCTGGTCACC'
 
 analyze_corrections(true_sequence, raw_sequence, ec_sequence)
 
