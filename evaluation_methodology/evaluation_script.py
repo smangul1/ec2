@@ -1,8 +1,8 @@
 
 ######################################################################
-###Evaluation Code for Error Correction Benchmarking
-#  project zar-lab ucla
-#  3/14/18
+# Evaluation Code for Error Correction Benchmarking
+#   project zar-lab ucla
+#   3/14/18
 
 #  Functions Contained: analyze_corrections,
 ######################################################################
@@ -29,7 +29,7 @@ def analyze_corrections(true_sequence, raw_sequence, ec_sequence):
             Object 1: (dictionary) stats_dict which has the base level counts for the sequence:
                 EX:        stats_dict = {'TN':0, 'TP':0, 'FN':0, 'FP':0, 'INDEL':0, 'TRIM': 0}
             Object 2: (string) seq_ID which dictates the read level classification (one of the following list):
-                EX:        ["TN", "FP(NORMAL)", "FP(INDEL)", "FP(TRIMMING)", "TP", "FN"]
+                EX:        "TN", "FP(NORMAL)", "FP(INDEL)", "FP(TRIMMING)", "TP", "FN"
     """
 
     ###Series of global alignments that act as a sort of multiple sequence aligner.
@@ -38,7 +38,6 @@ def analyze_corrections(true_sequence, raw_sequence, ec_sequence):
     #2. Alignment 2- true_2|ec_sequence = true_3, ec_3
 
     #TODO: play with weights on these.
-    #
     alignments = pairwise2.align.globalms(true_sequence, raw_sequence, 5, -4, -10, -0.1)
 
     true_2 = alignments[0][0]
@@ -86,8 +85,7 @@ def analyze_corrections(true_sequence, raw_sequence, ec_sequence):
             seq_ID = seq_classes[2]
         elif stats_dict['TP'] != 0 and stats_dict['FP'] == 0:
             seq_ID = seq_classes[4]
-
-        #TO DO: what to do about number 7, also need to incorporate the "FN"
+        #TO DO: also need to incorporate the "FN" and TRIMMING
 
         print "BASE LEVEL: ", stats_dict
         print "READ LEVEL: ", seq_ID
